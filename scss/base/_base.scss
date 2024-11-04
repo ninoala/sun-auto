@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  //this defines what 1rem is, 1 rem = 10px in this case; 10px/16px = 62.5%
+  font-size: 62.5%;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}

@@ -1,0 +1,65 @@
+//media query manager
+
+/*
+0 - 600px: phone
+600px - 900px: tablet portrait
+900px - 1200px: tablet landscape
+1200px - 1800px: normal styles
+1800px+: big desktop
+
+$breakpoint values:
+- phone
+- tab-port
+- tab-land
+- desktop 
+
+Order: base + typography -> general layout + grid > page layout > components
+*/
+
+//using ems here instead of rems here, 1em = 16px
+@mixin respond($breakpoint) {
+  @if $breakpoint == sm-phone {
+    @media only screen and (max-width: 28.125em) { @content }; //450px
+  }
+
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 50em) { @content }; //800px
+  }
+
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 62.5em) { @content }; //1000px
+  }
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) { @content }; //1200px
+  }
+
+  @if $breakpoint == sm-desktop {
+    @media only screen and (max-width: 93.75em) { @content }; //1500px
+  }
+
+  @if $breakpoint == med-desktop {
+    @media only screen and (max-width: 100em) { @content }; //1600px
+  }
+
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: 112.5em) { @content }; //1800px
+  }
+}
+
+//position absolute center
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//clearfix for floats
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

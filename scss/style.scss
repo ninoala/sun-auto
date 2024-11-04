@@ -1,0 +1,24 @@
+//abstracts
+@import 'abstracts/animations';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+
+//base
+@import 'base/base';
+@import 'base/normalize';
+@import 'base/typography';
+@import 'base/utilities';
+
+//components
+@import 'components/buttons';
+@import 'components/form';
+@import 'components/popup';
+@import 'components/service-card';
+@import 'components/profile-table';
+
+//layout
+@import 'layout/header';
+@import 'layout/footer';
+
+//pages
+@import 'pages/home';    

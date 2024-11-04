@@ -1,0 +1,55 @@
+.site-footer {
+	background-color: $color-bg;
+	color: $color-text;
+	padding: 1rem 0;
+	position: relative;
+	z-index: 100;
+
+	&__logo {
+		width: 7.5rem;
+	}
+
+	&__heading {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin-bottom: 2rem;
+		text-shadow: $text-shadow;
+	}
+
+	&__list {
+		list-style: none;
+		font-size: 2.4rem;
+		font-weight: 700;
+		display: flex;
+		gap: 10rem;
+		margin-left: 7.5rem;
+		margin-bottom: 0;
+		text-shadow: $text-shadow;
+	}
+
+	&__item {
+		margin-bottom: 1rem;
+	}
+
+	&__icon {
+		margin-right: 1rem;
+		color: #d16d6a;
+	}
+
+	&__paragraph {
+		margin-right: 2.5rem;
+		margin-bottom: 0;
+		font-size: 2.4rem;
+		font-weight: 600;
+		text-align: right;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		text-shadow: $text-shadow;
+	}
+
+	&__site-info {
+		position: relative;
+	}
+}
