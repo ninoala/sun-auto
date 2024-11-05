@@ -127,7 +127,7 @@ get_header();
     </div>
   </section>
 
-  <section class="address" id="address">
+  <section class="address" id="about">
     <h2 class="heading-secondary u-margin-top-medium u-margin-bottom-large">会社概要</h2>
     
     <div class="profile fade-up">
@@ -194,7 +194,7 @@ get_header();
       </table>
     </div>
 
-    <div class="address__flex-container">
+    <div class="address__flex-container" id="contactus">
       <div class="acf-map fade-up">
         <?php $mapLocation = get_field('map_location'); ?>
         <?php if ($mapLocation) : ?>

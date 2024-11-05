@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 	const serviceButtons = document.querySelectorAll('.square-btn--services');
-	const hiringButton = document.querySelector('.menu-item-hiring a'); // Select the "Hiring" menu item
+	const hiringButton = document.querySelector('.menu-item-hiring a'); //select the "Hiring" menu item
+	const presidentMessageButton = document.getElementById('menu-item-96'); //select the president message button in the header nav
 	const openPopupButton = document.getElementById('openPopup');
 	const popup = document.getElementById('popup');
 	const popupClose = document.querySelector('.popup__close');
@@ -126,6 +127,17 @@ document.addEventListener('DOMContentLoaded', function () {
 	//add event listener for the "社長メッセージ" button
 	if (openPopupButton) {
 		openPopupButton.addEventListener('click', function (event) {
+			event.preventDefault();
+			const specificPostId = '186';
+			openPopupWithData(specificPostId);
+		});
+	} else {
+		console.error('"社長メッセージ" button not found');
+	}
+
+	//add event listener for the "社長メッセージ" button in header nav
+	if (presidentMessageButton) {
+		presidentMessageButton.addEventListener('click', function (event) {
 			event.preventDefault();
 			const specificPostId = '186';
 			openPopupWithData(specificPostId);
