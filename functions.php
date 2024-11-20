@@ -300,3 +300,13 @@ function enqueue_font_awesome_kit() {
     echo '<script src="https://kit.fontawesome.com/9fa7db7f27.js" crossorigin="anonymous"></script>';
 }
 add_action('wp_head', 'enqueue_font_awesome_kit');
+
+function theme_enqueue_styles() {
+    wp_enqueue_style(
+        'theme-style', 
+        get_stylesheet_uri(), 
+        array(), 
+        filemtime(get_template_directory() . '/style.css') // Cache-busting timestamp
+    );
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
