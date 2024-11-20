@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 						popupThumbnail.src = data.data.featured_image_url;
 						popupTitle.innerText = data.data.title;
 						popupText.innerHTML = data.data.popup_text;
-						popupLink.href = data.data.link;
+						popupLink.href = data.data.button_link;
 						popupLink.innerHTML = data.data.button_text;
 
 						//show or hide the link button based on the postId
@@ -73,6 +73,14 @@ document.addEventListener('DOMContentLoaded', function () {
 							popupThumbnail.classList.remove(
 								'car-sales-thumbnail'
 							);
+						}
+
+						//different thumbnail for お友達紹介車検
+						if (
+							postId === '134' &&
+							data.data.additional_image_url
+						) {
+							popupThumbnail.src = data.data.additional_image_url;
 						}
 
 						//apply custom styles for the 'president message' popup

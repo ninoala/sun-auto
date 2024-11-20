@@ -211,7 +211,8 @@ function fetch_service_post() {
     // Get the ACF fields 'popup_text' and 'button_text'
     $popup_text = get_field('popup_text', $post_id); // Use get_field() for ACF
 		$button_text = get_field('button_text', $post_id);
-
+		$button_link =  get_field('button_link', $post_id);
+		$additional_image_url = get_field('additional_image', $post_id);
 
     // Prepare the response array
     $response = array(
@@ -220,6 +221,8 @@ function fetch_service_post() {
 			'button_text' => $button_text,
       'featured_image_url' => $thumbnail_url,
       'link' => get_permalink($post),
+			'button_link' => $button_link,
+			'additional_image_url' => $additional_image_url,
     );
 
     wp_send_json_success($response);

@@ -1,0 +1,31 @@
+//acf map properties
+.acf-map {
+	width: 65rem;
+	height: 58.5rem;
+
+	border: #ccc solid 1px;
+	border-radius: 5px;
+	box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+
+	@media only screen and (max-width: 1400px) {
+		width: 55rem;
+	}
+
+	@include respond(tab-land) {
+		width: 75%;
+	}
+
+	@include respond(phone) {
+		width: 85%;
+		height: 50rem;
+	}
+}
+
+.gm-style-iw-chr {
+	height: 20px;
+}
+
+/* fixes potential theme css conflict */
+.acf-map img {
+	max-width: inherit !important;
+}

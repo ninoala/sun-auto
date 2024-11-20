@@ -5,6 +5,8 @@
 	position: relative;
 	width: 90%;
 	margin: auto;
+	overflow: hidden;
+	height: auto;
 
 	&__image-container {
 		display: flex;
@@ -15,10 +17,21 @@
 	&__image-slice {
 		width: 20%;
 		height: 40vw;
-		background-image: url('http://sun-auto-mitsuke.local/wp-content/themes/sun-auto/images/hero.png');
+		min-height: 300px;
+		background-image: url('https://ynino.dev/sunauto/wp-content/themes/sun-auto/images/hero.png');
 		background-size: 500%;
 		border-radius: 2.1rem;
 		position: relative;
+
+		@include respond(tab-land) {
+			height: 70vh;
+			min-height: 300px;
+			background-size: cover;
+		}
+
+		@media only screen and (max-width: 929px) {
+			display: none;
+		}
 
 		&::before {
 			content: '';
@@ -53,6 +66,32 @@
 		background-position: -400% 0;
 	}
 
+	&__full-image {
+		display: none;
+		background-image: url('https://ynino.dev/sunauto/wp-content/themes/sun-auto/images/hero.png');
+		width: 100%;
+		height: 70vh;
+		border-radius: 2.1rem;
+		object-fit: contain;
+		background-position: center;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 2.1rem;
+			background-color: rgba(0, 0, 0, 0.45);
+			z-index: 1;
+		}
+
+		@media only screen and (max-width: 929px) {
+			display: block;
+		}
+	}
+
 	&__content {
 		position: absolute;
 		top: 0;
@@ -66,8 +105,173 @@
 	}
 
 	&__image {
-		width: 60rem;
-		margin-bottom: 10rem;
+		width: 40%;
+		margin-bottom: 5%;
+
+		@media only screen and (max-width: 1440px) {
+			width: 35%;
+		}
+
+		@media only screen and (max-width: 1200px) {
+			width: 40%;
+		}
+
+		@media only screen and (max-width: 929px) {
+			width: 55%;
+		}
+
+		@include respond(phone) {
+			width: 65%;
+		}
+
+		@media only screen and (max-width: 600px) {
+			width: 75%;
+		}
+
+		@media only screen and (max-width: 400px) {
+			width: 80%;
+		}
+	}
+}
+
+.animated-image {
+	position: absolute;
+	bottom: 12.25%;
+	width: 100%;
+	height: auto;
+	//animation: move-across 50s linear infinite;
+
+	&__car-container {
+		position: relative;
+		width: 20rem;
+
+		@media only screen and (max-width: 1675px) {
+			width: 17.5rem;
+		}
+
+		@media only screen and (max-width: 1440px) {
+			width: 15rem;
+			bottom: 11.75%;
+		}
+
+		@media only screen and (max-width: 1200px) {
+			width: 12.5rem;
+			bottom: 9.25% !important;
+		}
+	}
+
+	&__car {
+		position: absolute;
+		z-index: 5;
+	}
+
+	&__wheel-front {
+		position: absolute;
+		width: 5rem;
+		top: 3.5rem;
+		left: 1.5rem;
+		z-index: 100;
+		animation: spin 1s linear infinite;
+
+		@media only screen and (max-width: 1675px) {
+			width: 4.25rem;
+			top: 3rem;
+			left: 1.5rem;
+		}
+
+		@media only screen and (max-width: 1440px) {
+			width: 3.5rem;
+			top: 2.5rem;
+			left: 1.3rem;
+		}
+
+		@include respond(tab-land) {
+			width: 2.75rem;
+			top: 2.2rem;
+			left: 1.2rem;
+		}
+	}
+
+	&__wheel-back {
+		position: absolute;
+		top: 3.5rem;
+		right: 1.25rem;
+		z-index: 100;
+		width: 5rem;
+		animation: spin 1s linear infinite;
+
+		@media only screen and (max-width: 1675px) {
+			width: 4.25rem;
+			top: 2.9rem;
+			right: 1.1rem;
+		}
+
+		@media only screen and (max-width: 1440px) {
+			width: 3.5rem;
+			top: 2.4rem;
+			right: 1.1rem;
+		}
+
+		@include respond(tab-land) {
+			width: 2.75rem;
+			top: 2.1rem;
+			right: 1rem;
+		}
+	}
+
+	&__text {
+		font-size: 5.5rem;
+		font-weight: 700;
+		color: #e91e63;
+		position: absolute;
+		bottom: -8rem;
+		left: 22rem;
+		z-index: 10;
+
+		@media only screen and (max-width: 1675px) {
+			font-size: 4.75rem;
+			left: 18rem;
+			bottom: -7rem;
+		}
+
+		@media only screen and (max-width: 1440px) {
+			font-size: 4rem;
+			left: 16rem;
+			bottom: -6rem;
+		}
+
+		@include respond(tab-land) {
+			font-size: 3.5rem;
+			left: 15rem;
+			bottom: -5.5rem;
+		}
+
+		@include respond(tab-port) {
+			font-size: 3.5rem;
+			bottom: -5rem;
+		}
+
+		@include respond(phone) {
+			font-size: 2.75rem;
+		}
+	}
+}
+
+@keyframes move-across {
+	0% {
+		left: 100%;
+	}
+	100% {
+		left: -100%;
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(-360deg);
 	}
 }
 
@@ -86,6 +290,20 @@
 		font-size: 3rem;
 		font-weight: 700;
 		margin-bottom: 1rem;
+
+		@include respond(phone) {
+			font-size: 2rem;
+		}
+
+		@include respond(sm-phone) {
+			font-size: 1.7rem;
+		}
+
+		img {
+			@include respond(phone) {
+				width: 3rem;
+			}
+		}
 	}
 
 	&__contact {
@@ -93,12 +311,25 @@
 		align-items: center;
 		justify-content: center;
 		gap: 1rem;
+
+		@include respond(sm-phone) {
+			flex-direction: column;
+		}
 	}
 
 	&__contact-link {
 		img {
 			background-color: #00c300;
 			padding: 1rem 0;
+
+			@include respond(phone) {
+				width: 15rem;
+			}
+		}
+
+		&:hover {
+			transform: translateY(-0.25rem);
+			transition: transform 0.2s;
 		}
 	}
 
@@ -113,6 +344,19 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+
+			@include respond(phone) {
+				font-size: 2rem;
+			}
+
+			@include respond(sm-phone) {
+				font-size: 1.7rem;
+			}
+		}
+
+		&:hover {
+			transform: translateY(-0.25rem);
+			transition: transform 0.2s;
 		}
 	}
 
@@ -129,6 +373,17 @@
 		grid-template-rows: repeat(3, minmax(100px, 1fr));
 		gap: 5rem;
 		margin: 0 auto;
+
+		@include respond(tab-port) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 2rem;
+
+			& > * {
+				flex: 0 0 auto;
+			}
+		}
 	}
 
 	&__message {
@@ -152,6 +407,11 @@
 			color: #d16d6a;
 		}
 	}
+}
+
+.sns-link:hover {
+	transform: translateY(-0.25rem);
+	transition: transform 0.2s;
 }
 
 //news section
@@ -279,7 +539,8 @@
 	text-align: center;
 
 	&__grid-container {
-		width: 80%;
+		width: 95%;
+		height: auto;
 		margin: 0 auto;
 		grid-column: full-start / full-end;
 		display: grid;
@@ -287,6 +548,10 @@
 		grid-template-rows: repeat(4, 10vw);
 		grid-gap: 1.5rem;
 		padding: 1.5rem;
+
+		@include respond(tab-land) {
+			width: 90%;
+		}
 	}
 
 	&__image {
@@ -327,7 +592,34 @@
 	}
 }
 
-//address section
+//profile and address/contact section
+
+.profile {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+	width: 80%;
+	padding: 2rem 4rem;
+	border: 3px solid $color-one;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: clamp(15px, 50px, 60px);
+	box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+	margin: 0 auto 10rem auto;
+
+	@include respond(tab-land) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	@media only screen and (max-width: 500px) {
+		width: 100%;
+		padding: 0;
+	}
+}
+
 .address {
 	text-align: center;
 	width: 100%;
@@ -341,7 +633,6 @@
 
 	@include respond(phone) {
 		margin: 0 auto;
-		padding: 5rem;
 	}
 
 	&::after {
@@ -368,111 +659,4 @@
 			flex-direction: column;
 		}
 	}
-
-	&__list {
-		list-style: none;
-		width: 60rem;
-		background: $color-white;
-		border: #ccc solid 1px;
-		box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
-		height: 40rem;
-		padding: 2rem;
-		border-radius: 5px;
-		margin: 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: flex-start;
-		gap: 1rem;
-		border-bottom-right-radius: clamp(40px, 60px, 70px);
-		position: relative;
-		min-width: 15rem;
-
-		@include respond(tab-port) {
-			width: 50rem;
-			height: 30rem;
-		}
-
-		@include respond(phone) {
-			width: 35rem;
-			height: 40rem;
-		}
-
-		@media only screen and (max-width: 350px) {
-			width: 30rem;
-			height: 30rem;
-		}
-	}
-
-	&__item {
-		color: $color-text;
-		font-size: 2.1rem;
-		font-weight: 600;
-		text-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
-
-		@include respond(tab-port) {
-			font-size: 2rem;
-		}
-
-		&--gold {
-			font-size: 4rem;
-			font-weight: 600;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			text-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
-			margin-bottom: 2rem;
-
-			@include respond(tab-port) {
-				font-size: 3.5rem;
-			}
-
-			@include respond(phone) {
-				font-size: 2.5rem;
-			}
-
-			p {
-				margin-bottom: 0;
-			}
-		}
-	}
-
-	&__logo {
-		width: 8rem;
-	}
-}
-
-//acf map properties
-.acf-map {
-	width: 60rem;
-	height: 60rem;
-
-	border: #ccc solid 1px;
-	border-radius: 5px;
-	box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
-
-	@include respond(phone) {
-		width: 35rem;
-		height: 25rem;
-	}
-}
-
-/* fixes potential theme css conflict */
-.acf-map img {
-	max-width: inherit !important;
-}
-
-.profile {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 2rem;
-	width: 80%;
-	padding: 2rem 4rem;
-	border: 3px solid $color-one;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
-	border-bottom-left-radius: 4px;
-	border-bottom-right-radius: clamp(15px, 50px, 60px);
-	box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
-	margin: 0 auto 10rem auto;
 }

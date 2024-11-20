@@ -19,6 +19,7 @@
 
 	&__content {
 		@include absolute-center;
+		position: relative;
 		background-color: $color-white;
 		width: 75%;
 		max-height: 80%;
@@ -49,6 +50,18 @@
 		gap: 5rem;
 	}
 
+	&__thumbnail-container {
+		width: fit-content;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.additional-thumbnail {
+		width: 25rem;
+		float: left;
+	}
+
 	&__text {
 		color: $color-text;
 		font-size: 3rem;
@@ -66,17 +79,25 @@
 		margin: 0 auto;
 	}
 
+	&__header {
+		position: sticky;
+		top: 0;
+		background-color: transparent;
+		z-index: 10;
+		padding: 1rem;
+	}
+
 	&__close {
 		&:link,
 		&:visited {
-			display: inline-block;
-			color: grey;
 			position: absolute;
-			top: 2.5rem;
-			right: 2.5rem;
+			top: -0.5rem;
+			right: -3.25rem;
+			color: grey;
 			text-decoration: none;
-			font-size: 3rem;
+			font-size: 3.5rem;
 			line-height: 1;
+			cursor: pointer;
 		}
 
 		&:hover {
@@ -160,7 +181,7 @@
 }
 
 .p-heading {
-	margin-left: 50rem;
+	margin-left: 57rem;
 	width: 50%;
 }
 
@@ -174,4 +195,9 @@
 
 .car-img {
 	width: 60rem;
+}
+
+.pink {
+	color: #e91e63;
+	margin-bottom: 0;
 }

@@ -15,6 +15,10 @@
 		align-items: center;
 		margin-bottom: 2rem;
 		text-shadow: $text-shadow;
+
+		@include respond(tab-port) {
+			justify-content: center;
+		}
 	}
 
 	&__list {
@@ -26,10 +30,51 @@
 		margin-left: 7.5rem;
 		margin-bottom: 0;
 		text-shadow: $text-shadow;
+
+		@include respond(tab-land) {
+			font-size: 1.8rem;
+		}
+
+		@include respond(tab-port) {
+			justify-content: center;
+			margin-left: 0;
+		}
+
+		@include respond(phone) {
+			gap: 2rem;
+		}
+
+		@media only screen and (max-width: 550px) {
+			font-size: 1.6rem;
+			gap: 1rem;
+		}
+
+		@include respond(sm-phone) {
+			flex-direction: column;
+			font-size: 2rem;
+			align-items: center;
+		}
+
+		@media only screen and (max-width: 350px) {
+			font-size: 1.6rem;
+		}
 	}
 
 	&__item {
 		margin-bottom: 1rem;
+	}
+
+	&__footer-link {
+		text-decoration: none;
+		color: #5a5b68;
+
+		&:visited {
+			color: #5a5b68;
+		}
+
+		&:hover {
+			color: #191970;
+		}
 	}
 
 	&__icon {
@@ -44,9 +89,24 @@
 		font-weight: 600;
 		text-align: right;
 		position: absolute;
-		bottom: 0;
+		bottom: 1rem;
 		right: 0;
 		text-shadow: $text-shadow;
+
+		@include respond(tab-land) {
+			font-size: 1.8rem;
+		}
+
+		@include respond(tab-port) {
+			position: relative;
+			margin: 2rem auto 0 auto;
+			text-align: center;
+			width: fit-content;
+		}
+
+		@media only screen and (max-width: 350px) {
+			font-size: 1.6rem;
+		}
 	}
 
 	&__site-info {

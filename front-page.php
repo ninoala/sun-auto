@@ -5,21 +5,34 @@ get_header();
 <main id="primary" class="site-main">
   <section class="hero">
     <div class="hero__image-container">
-      <div class="hero__image-slice hero__slice1 fade-up"></div>
-      <div class="hero__image-slice hero__slice2 fade-down"></div>
-      <div class="hero__image-slice hero__slice3 fade-up"></div>
-      <div class="hero__image-slice hero__slice4 fade-down"></div>
-      <div class="hero__image-slice hero__slice5 fade-up"></div>
+        <div class="hero__image-slice hero__slice1 fade-up"></div>
+        <div class="hero__image-slice hero__slice2 fade-down"></div>
+        <div class="hero__image-slice hero__slice3 fade-up"></div>
+        <div class="hero__image-slice hero__slice4 fade-down"></div>
+        <div class="hero__image-slice hero__slice5 fade-up"></div>
     </div>
+
+    <div class="hero__full-image"></div>
 
     <div class="hero__content">
       <img src="<?php echo get_theme_file_uri('images/logo.png'); ?>" alt="Logo" class="hero__image appear">
       <h1 class="heading-primary"></h1>
     </div>
+
+    <div class="animated-image">
+      <div class="animated-image__car-container">
+        <img src="<?php echo get_theme_file_uri('images/car-no-wheels.png'); ?>" alt="Image of a car" class="animated-image__car">
+        <img src="<?php echo get_theme_file_uri('images/wheel-front.png'); ?>" alt="Front wheel of a car" class="animated-image__wheel-front">
+        <img src="<?php echo get_theme_file_uri('images/wheel-back.png'); ?>" alt="Back wheel of a car" class="animated-image__wheel-back">
+      </div>
+      <span class="animated-image__text">
+        <?php echo esc_html(get_field('car_animation_text')); ?>
+      </span>
+    </div>
   </section>
 
   <section class="services" id="services">
-    <div class="services__intro fade-up">
+    <div class="services__intro">
       <p class="services__intro-paragraph">
         <img src="<?php echo get_theme_file_uri('images/wrench-icon-left.png'); ?>" alt="Icon of a wrench" class="services__inline-icon">
         ご予約はLINE・お電話にて受付中
@@ -27,11 +40,11 @@ get_header();
       </p>
 
       <div class="services__contact">
-        <a href="#" class="services__contact-link">
+        <a href="https://lin.ee/K7GbL8t" class="services__contact-link" target="_blank">
           <img src="<?php echo get_theme_file_uri('images/line-logo-long.png'); ?>" alt="Line logo">
         </a>
 
-        <a href="#" class="services__contact-phone">
+        <a href="tel:+812856121212" class="services__contact-phone">
           <img src="<?php echo get_theme_file_uri('images/icon-phone.png'); ?>" alt="Line logo"><span>0285-612-1212</span>
         </a>
       </div>
@@ -58,16 +71,15 @@ get_header();
 
     <div class="popup" id="popup">
       <div class="popup__content">
+        <div class="popup__header">
+          <a href="#" class="popup__close">&times;</a>
+        </div>
         <h2 class="heading-secondary--no-after u-margin-bottom-medium popup__title"></h2>
-
-        <a href="#" class="popup__close">&times;</a>
-
         <div class="popup__flex-container">
           <img src="" alt="" class="popup__thumbnail" />
           <div class="popup__text"></div>
         </div>
-
-        <a href="#" class="btn popup__link"></a>
+        <a href="" target="_blank" class="btn popup__link"></a>
       </div>
     </div>
 
@@ -194,7 +206,7 @@ get_header();
       </table>
     </div>
 
-    <div class="address__flex-container" id="contactus">
+    <div class="address__flex-container">
       <div class="acf-map fade-up">
         <?php $mapLocation = get_field('map_location'); ?>
         <?php if ($mapLocation) : ?>
@@ -206,11 +218,12 @@ get_header();
         <?php endif; ?>
       </div>
 
-      <div class="fade-up">
+      <div class="fade-up form-container">
         <?php echo do_shortcode('[contact-form-7 id="92ed38d" title="Contact form 1"]') ?>
       </div>
     </div>
   </section>
+  <a id="scroll-target" style="scroll-padiing-top: 100rem;"></a>
 </main><!-- #main -->
 <?php
 get_footer();
