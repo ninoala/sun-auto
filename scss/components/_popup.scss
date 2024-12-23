@@ -68,6 +68,10 @@
 		line-height: 1.5;
 		text-align: left;
 
+		@include respond(sm-phone) {
+			font-size: 2rem;
+		}
+
 		p {
 			margin-bottom: 1.5rem;
 		}
@@ -183,6 +187,14 @@
 .p-heading {
 	margin-left: 57rem;
 	width: 50%;
+
+	@include respond(sm-desktop) {
+		margin-left: 25rem;
+	}
+
+	@media only screen and (max-width: 81.25rem) {
+		font-size: 4rem;
+	}
 }
 
 .extra-flex {

@@ -109,11 +109,11 @@
 		margin-bottom: 5%;
 
 		@media only screen and (max-width: 1440px) {
-			width: 35%;
+			width: 40%;
 		}
 
 		@media only screen and (max-width: 1200px) {
-			width: 40%;
+			width: 45%;
 		}
 
 		@media only screen and (max-width: 929px) {
@@ -125,11 +125,11 @@
 		}
 
 		@media only screen and (max-width: 600px) {
-			width: 75%;
+			width: 80%;
 		}
 
 		@media only screen and (max-width: 400px) {
-			width: 80%;
+			width: 85%;
 		}
 	}
 }
@@ -139,7 +139,15 @@
 	bottom: 12.25%;
 	width: 100%;
 	height: auto;
-	//animation: move-across 50s linear infinite;
+	animation: move-across 30s linear infinite;
+
+	@media (max-width: 768px) {
+		animation-duration: 20s;
+	}
+
+	@media (max-width: 480px) {
+		animation-duration: 15s;
+	}
 
 	&__car-container {
 		position: relative;
@@ -157,6 +165,10 @@
 		@media only screen and (max-width: 1200px) {
 			width: 12.5rem;
 			bottom: 9.25% !important;
+		}
+
+		@media only screen and (max-width: 650px) {
+			width: 10rem;
 		}
 	}
 
@@ -190,6 +202,12 @@
 			top: 2.2rem;
 			left: 1.2rem;
 		}
+
+		@media only screen and (max-width: 650px) {
+			width: 2.25rem;
+			top: 1.8rem;
+			left: 0.9rem;
+		}
 	}
 
 	&__wheel-back {
@@ -216,6 +234,12 @@
 			width: 2.75rem;
 			top: 2.1rem;
 			right: 1rem;
+		}
+
+		@media only screen and (max-width: 650px) {
+			width: 2.25rem;
+			top: 1.7rem;
+			right: 0.8rem;
 		}
 	}
 
@@ -253,6 +277,24 @@
 
 		@include respond(phone) {
 			font-size: 2.75rem;
+		}
+
+		@media only screen and (max-width: 650px) {
+			font-size: 2.25rem;
+			bottom: -4rem;
+			left: 12rem;
+		}
+
+		@media only screen and (max-width: 525px) {
+			font-size: 1.8rem;
+			bottom: -3.5rem;
+			left: 11rem;
+		}
+
+		@media only screen and (max-width: 425px) {
+			font-size: 1.7rem;
+			bottom: -3.25rem;
+			left: 11rem;
 		}
 	}
 }
