@@ -1,16 +1,16 @@
 //colors
-$color-one: #f39800;
-$color-two: #f2a45c;
-$color-three: #f3d4cc;
-$color-four: #E8C0B7;
-$color-bg: #e5dcd2;
-$color-text: #5a5b68;
-$color-text-two: #101560;
-$color-white: #fff;
-$color-black: #000;
+$color-one: rgb(243, 152, 0); // #f39800
+$color-two: rgb(242, 164, 92); // #f2a45c
+$color-three: rgb(243, 212, 204); // #f3d4cc
+$color-four: rgb(232, 192, 183); // #E8C0B7
+$color-bg: rgb(229, 220, 210); // #e5dcd2
+$color-text: rgb(90, 91, 104); // #5a5b68
+$color-text-two: rgb(16, 21, 96); // #101560
+$color-white: rgb(255, 255, 255); // #fff
+$color-black: rgb(0, 0, 0); // #000
 
 //shadows
-$text-shadow: 0 1rem 1rem rgba(0,0,0,.2);
+$text-shadow: 0 1rem 0.75rem rgba(0, 0, 0, 0.15);
 
 //borders
 $border: solid 5px $color-one;

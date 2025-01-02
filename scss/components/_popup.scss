@@ -48,6 +48,11 @@
 		display: flex;
 		justify-content: center;
 		gap: 5rem;
+
+		@media only screen and (max-width: 800px) {
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 
 	&__thumbnail-container {
@@ -60,9 +65,14 @@
 	.additional-thumbnail {
 		width: 25rem;
 		float: left;
+
+		@media only screen and (max-width: 630px) {
+			float: none;
+		}
 	}
 
 	&__text {
+		width: 100%;
 		color: $color-text;
 		font-size: 3rem;
 		line-height: 1.5;
@@ -80,7 +90,7 @@
 	&__link {
 		display: block;
 		width: fit-content;
-		margin: 0 auto;
+		margin: 4rem auto 0 auto;
 	}
 
 	&__header {
@@ -95,8 +105,8 @@
 		&:link,
 		&:visited {
 			position: absolute;
-			top: -0.5rem;
-			right: -3.25rem;
+			top: 1.25rem;
+			right: -2.5rem;
 			color: grey;
 			text-decoration: none;
 			font-size: 3.5rem;
@@ -122,14 +132,23 @@
 	&__thumbnail {
 		width: 25rem;
 		float: left;
+		margin-top: 3rem;
 		margin-right: 3rem;
 		margin-bottom: 3rem;
+
+		@media only screen and (max-width: 630px) {
+			float: none;
+		}
 	}
 
 	table {
 		max-width: 120rem;
 		border-collapse: collapse;
 		border-spacing: 0;
+
+		@include respond(tab-port) {
+			font-size: 1.8rem;
+		}
 
 		td,
 		th {
@@ -138,6 +157,20 @@
 
 		td {
 			width: 20rem;
+		}
+	}
+
+	@media (max-width: 700px) {
+		table th,
+		table td {
+			display: table-cell; /* Ensure consistent behavior */
+			position: static; /* Avoid any unintended offsets */
+			width: auto; /* Prevent fixed-width misalignments */
+		}
+
+		table tr {
+			margin-bottom: 0;
+			width: 100%;
 		}
 	}
 
@@ -174,27 +207,30 @@
 
 .cash-register-thumbnail {
 	position: absolute;
-	top: 0;
-	left: 20%;
+	top: -2.8rem;
+	left: 7rem;
 	width: 15rem;
+
+	@include respond(tab-land) {
+		width: 12.5rem;
+	}
+
+	@media only screen and (max-width: 800px) {
+		top: -3.8rem;
+		left: 3rem;
+		width: 10rem;
+	}
+
+	@include respond(sm-phone) {
+		top: 1rem;
+		left: 1rem;
+		width: 5rem;
+	}
 }
 
 .car-sales-thumbnail {
 	margin-top: -5rem;
 	width: 25rem;
-}
-
-.p-heading {
-	margin-left: 57rem;
-	width: 50%;
-
-	@include respond(sm-desktop) {
-		margin-left: 25rem;
-	}
-
-	@media only screen and (max-width: 81.25rem) {
-		font-size: 4rem;
-	}
 }
 
 .extra-flex {

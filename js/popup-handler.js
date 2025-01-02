@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const presidentMessageButton = document.getElementById('menu-item-96'); //select the president message button in the header nav
 	const openPopupButton = document.getElementById('openPopup');
 	const popup = document.getElementById('popup');
+	const popupContent = document.querySelector('.popup__content');
 	const popupClose = document.querySelector('.popup__close');
 	const popupThumbnail = document.querySelector('.popup__thumbnail');
 	const popupFlex = document.querySelector('.popup__flex-container');
@@ -69,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
 						//apply custom class for postId 52
 						if (postId === '52') {
 							popupThumbnail.classList.add('car-sales-thumbnail');
+							popupThumbnail.style.marginTop = '2rem';
 						} else {
 							popupThumbnail.classList.remove(
 								'car-sales-thumbnail'
@@ -95,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
 							popupFlex.style.flexDirection = 'row-reverse';
 							popupFlex.style.justifyContent = 'center';
 							popupFlex.style.alignItems = 'center';
-							popupText.style.fontSize = '1.85rem';
+							popupText.style.fontSize = '2rem';
 							popupText.style.fontWeight = '700';
 						} else {
 							popupThumbnail.style.width = '';
@@ -128,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		button.addEventListener('click', function (event) {
 			event.preventDefault();
 			const postId = this.getAttribute('data-id');
+			popupContent.scrollTop = 0;
 			openPopupWithData(postId);
 		});
 	});

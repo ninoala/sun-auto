@@ -36,26 +36,26 @@
 }
 
 @media only screen and (max-width: 700px) {
-	th,
-	td {
+	.profile-table th,
+	.profile-table td {
 		display: block;
 		width: 100%;
 		padding: 0.5rem 1rem;
 		text-align: left;
 	}
 
-	tr {
+	.profile-table tr {
 		margin-bottom: 1.5rem;
 		display: block;
 		border-bottom: 1px solid #ddd;
 	}
 
-	th {
+	.profile-table th {
 		font-weight: bold;
 		margin-bottom: 0.5rem;
 	}
 
-	td {
+	.profile-table td {
 		font-weight: normal;
 	}
 }
