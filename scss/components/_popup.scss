@@ -153,9 +153,13 @@
 		td,
 		th {
 			border: 2px solid black !important;
-		}
+			white-space: nowrap;   /* Prevents text from wrapping */
+    		width: fit-content;    /* Shrinks to fit the content */
+   			max-width: none;       /* Removes any imposed max-width */
+    		text-align: center;
+		}  
 
-		td {
+		td {  
 			width: 20rem;
 		}
 	}
@@ -165,11 +169,10 @@
 		table td {
 			display: table-cell; /* Ensure consistent behavior */
 			position: static; /* Avoid any unintended offsets */
-			width: auto; /* Prevent fixed-width misalignments */
 		}
 
 		table tr {
-			margin-bottom: 0;
+			margin-bottom: 0;  
 			width: 100%;
 		}
 	}
@@ -196,6 +199,57 @@
 		width: 100%;
 	}
 }
+
+.big-table {
+	width: 100%; /* Make table take full width */
+	border-collapse: collapse; /* Remove spacing between cells */
+	table-layout: fixed; /* Ensures equal column width */
+  }
+  
+  .big-table th, 
+  .big-table td {
+	border: 1px solid #ccc; /* Add border for clarity */
+	text-align: center; /* Center align the text */
+	padding: 10px; /* Add padding for spacing */
+	word-wrap: break-word; /* Ensure text wraps in narrow columns */
+  }
+  
+  .big-table th {
+	background-color: #f9f9f9; /* Highlight headers */
+  }
+  
+  .big-table td.text-left {
+	text-align: left; /* Align specific cells to the left */
+  }
+  
+  .big-table td.text-right {
+	text-align: right; /* Align specific cells to the right */
+  }
+  
+  @media (max-width: 700px) {
+	.big-table thead {
+	  display: none; /* Hide the header for small screens */
+	}
+	.big-table tr {
+	  display: block; /* Treat rows as block elements */
+	  margin-bottom: 1rem; /* Add spacing between rows */
+	}
+	.big-table td {
+	  display: block; /* Treat cells as block elements */
+	  text-align: right; /* Align all text to the right */
+	  position: relative; /* Position cells relative for pseudo-element labels */
+	  padding-left: 50%; /* Space for labels */
+	}
+	.big-table td::before {
+	  content: attr(data-label); /* Use the data-label attribute for labels */
+	  position: absolute; /* Position labels absolutely */
+	  left: 0;
+	  width: 50%; /* Labels take half width */
+	  white-space: nowrap; /* Prevent wrapping */
+	  text-align: left; /* Align labels to the left */
+	  font-weight: bold; /* Make labels bold */
+	}
+  }
 
 .red {
 	color: #e91e63;

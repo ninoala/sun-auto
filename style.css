@@ -1,13 +1,13 @@
 .fade-up {
 	opacity: 0;
 	transform: translateY(12rem);
-	transition: opacity 1.25s ease-out, transform 1.25s ease-out;
+	transition: opacity 1.25s ease-out, transform 1.25s ease-out;
 }
 
 .fade-down {
 	opacity: 0;
 	transform: translateY(-12rem);
-	transition: opacity 1.25s ease-out, transform 1.25s ease-out;
+	transition: opacity 1.25s ease-out, transform 1.25s ease-out;
 }
 
 .in-view {
@@ -1087,6 +1087,8 @@ textarea {
 	.heading-tertiary--news {
 		width: 100%;
 		font-size: 2.1rem;
+		position: static;
+		transform: none;
 	}
 }
 
@@ -1553,6 +1555,13 @@ textarea {
 .popup table td,
 .popup table th {
 	border: 2px solid black !important;
+	white-space: nowrap;
+	/* Prevents text from wrapping */
+	width: fit-content;
+	/* Shrinks to fit the content */
+	max-width: none;
+	/* Removes any imposed max-width */
+	text-align: center;
 }
 
 .popup table td {
@@ -1566,8 +1575,6 @@ textarea {
 		/* Ensure consistent behavior */
 		position: static;
 		/* Avoid any unintended offsets */
-		width: auto;
-		/* Prevent fixed-width misalignments */
 	}
 	.popup table tr {
 		margin-bottom: 0;
@@ -1595,6 +1602,80 @@ textarea {
 
 .popup__paragraph {
 	width: 100%;
+}
+
+.big-table {
+	width: 100%;
+	/* Make table take full width */
+	border-collapse: collapse;
+	/* Remove spacing between cells */
+	table-layout: fixed;
+	/* Ensures equal column width */
+}
+
+.big-table th,
+.big-table td {
+	border: 1px solid #ccc;
+	/* Add border for clarity */
+	text-align: center;
+	/* Center align the text */
+	padding: 10px;
+	/* Add padding for spacing */
+	word-wrap: break-word;
+	/* Ensure text wraps in narrow columns */
+}
+
+.big-table th {
+	background-color: #f9f9f9;
+	/* Highlight headers */
+}
+
+.big-table td.text-left {
+	text-align: left;
+	/* Align specific cells to the left */
+}
+
+.big-table td.text-right {
+	text-align: right;
+	/* Align specific cells to the right */
+}
+
+@media (max-width: 700px) {
+	.big-table thead {
+		display: none;
+		/* Hide the header for small screens */
+	}
+	.big-table tr {
+		display: block;
+		/* Treat rows as block elements */
+		margin-bottom: 1rem;
+		/* Add spacing between rows */
+	}
+	.big-table td {
+		display: block;
+		/* Treat cells as block elements */
+		text-align: right;
+		/* Align all text to the right */
+		position: relative;
+		/* Position cells relative for pseudo-element labels */
+		padding-left: 50%;
+		/* Space for labels */
+	}
+	.big-table td::before {
+		content: attr(data-label);
+		/* Use the data-label attribute for labels */
+		position: absolute;
+		/* Position labels absolutely */
+		left: 0;
+		width: 50%;
+		/* Labels take half width */
+		white-space: nowrap;
+		/* Prevent wrapping */
+		text-align: left;
+		/* Align labels to the left */
+		font-weight: bold;
+		/* Make labels bold */
+	}
 }
 
 .red {
