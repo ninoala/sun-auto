@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 						//apply custom styles for the 'president message' popup
 						if (postId === '186') {
+							popupContent.scrollTop = 0;
 							popupThumbnail.style.width = '40%';
 							popupThumbnail.style.float = 'none';
 							popupText.style.backgroundColor = '#E5DCD2';
@@ -99,6 +100,13 @@ document.addEventListener('DOMContentLoaded', function () {
 							popupFlex.style.alignItems = 'center';
 							popupText.style.fontSize = '2rem';
 							popupText.style.fontWeight = '700';
+							if (
+								window.matchMedia('(max-width: 900px)').matches
+							) {
+								popupFlex.style.flexDirection = 'column';
+								popupText.style.width = '95%';
+								popupThumbnail.style.width = '70%';
+							}
 						} else {
 							popupThumbnail.style.width = '';
 							popupThumbnail.style.float = '';
