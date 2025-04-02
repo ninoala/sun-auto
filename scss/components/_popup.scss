@@ -24,6 +24,8 @@
 		width: 75%;
 		max-height: 80%;
 		overflow-y: auto;
+		overflow-x: hidden;
+		box-sizing: border-box;
 		box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
 		border-radius: 3.9rem;
 		padding: 4rem 8rem;
@@ -142,7 +144,7 @@
 	}
 
 	table {
-		max-width: 120rem;
+		max-width: 100%;
 		border-collapse: collapse;
 		border-spacing: 0;
 
@@ -208,7 +210,14 @@
 
 		@include respond(phone) {
 			text-align: center;
-			width: 95%;
+			width: 90%;
+			margin: 0 auto;
+		}
+	}
+
+	&__caption {
+		@include respond(phone) {
+			width: 65%;
 			margin: 0 auto;
 		}
 	}

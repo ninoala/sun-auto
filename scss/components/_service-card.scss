@@ -15,9 +15,19 @@
 	align-items: center;
 	justify-content: flex-start;
 
-	&__image-box {
+	@include respond(tab-port) {
 		width: 15rem;
-		height: 15rem;
+		padding: 1rem 0.5rem;
+	}
+
+	&__image-box {
+		width: 10rem;
+		height: 10rem;
+
+		@include respond(tab-port) {
+			width: 8rem;
+			height: 8rem;
+		}
 
 		img {
 			height: 100%;

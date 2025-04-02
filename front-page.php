@@ -45,7 +45,7 @@ get_header();
         </a>
 
         <a href="tel:+812856121212" class="services__contact-phone">
-          <img src="<?php echo get_theme_file_uri('images/icon-phone.png'); ?>" alt="Line logo"><span>0285-612-1212</span>
+          <img src="<?php echo get_theme_file_uri('images/icon-phone.png'); ?>" alt="Line logo"><span>0258-61-1212</span>
         </a>
       </div>
     </div>

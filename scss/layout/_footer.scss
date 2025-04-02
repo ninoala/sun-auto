@@ -14,7 +14,6 @@
 		justify-content: flex-start;
 		align-items: center;
 		margin-bottom: 2rem;
-		text-shadow: $text-shadow;
 
 		@include respond(tab-port) {
 			justify-content: center;
@@ -29,7 +28,6 @@
 		gap: 10rem;
 		margin-left: 7.5rem;
 		margin-bottom: 0;
-		text-shadow: $text-shadow;
 
 		@include respond(tab-land) {
 			font-size: 1.8rem;
@@ -91,7 +89,6 @@
 		position: absolute;
 		bottom: 1rem;
 		right: 0;
-		text-shadow: $text-shadow;
 
 		@include respond(tab-land) {
 			font-size: 1.8rem;

@@ -194,4 +194,10 @@ document.addEventListener('DOMContentLoaded', function () {
 			document.body.classList.remove('no-scroll');
 		}
 	});
+
+	if (popupContent) {
+		popupContent.addEventListener('scroll', function () {
+			popupContent.style.overflowX = 'hidden';
+		});
+	}
 });

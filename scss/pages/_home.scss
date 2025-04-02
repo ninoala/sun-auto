@@ -194,7 +194,7 @@
 		@media only screen and (max-width: 1440px) {
 			width: 3.5rem;
 			top: 2.5rem;
-			left: 1.3rem;  
+			left: 1.3rem;
 		}
 
 		@include respond(tab-land) {
@@ -391,10 +391,14 @@
 		margin: 0 auto;
 
 		@include respond(tab-port) {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			gap: 2rem;
+			grid-template-columns: repeat(2, minmax(min-content, max-content));
+			grid-template-rows: repeat(3, minmax(100px, 1fr));
+			grid-gap: 1.25rem;
+
+			//display: flex;
+			//flex-wrap: wrap;
+			//justify-content: center;
+			//gap: 2rem;
 
 			& > * {
 				flex: 0 0 auto;
@@ -480,7 +484,7 @@
 				text-align: center;
 			}
 		}
-		
+
 		&:hover {
 			transform: translateY(-0.2rem) scale(1.02);
 		}
