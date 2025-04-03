@@ -166,7 +166,7 @@ get_header();
         </tr>
         <tr>
           <th>E-mail</th>
-          <td>cardoctor.sunauto@gmail.com</td>
+          <td>sunautomitsuke@gmail.com</td>
         </tr>
         <tr>
           <th>営業時間</th>
