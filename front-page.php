@@ -16,7 +16,7 @@ get_header();
 
     <div class="hero__content">
       <img src="<?php echo get_theme_file_uri('images/logo.png'); ?>" alt="Logo" class="hero__image appear">
-      <h1 class="heading-primary"></h1>
+      <h1 class="heading-primary hidden">サンオート株式会社</h1>
     </div>
 
     <div class="animated-image">

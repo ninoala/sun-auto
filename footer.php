@@ -41,7 +41,7 @@
 					<li class="site-footer__item"><i class="fa-solid fa-building-lock site-footer__icon"></i>定休日　日/祝日</li>
 				</div>
 			</ul>
-			<p class="site-footer__paragraph">&copy; 2024 | Created by NinoWeb</p>
+			<p class="site-footer__paragraph">&copy; 2024 | Created by <a src="https://">NinoWeb</a></p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
